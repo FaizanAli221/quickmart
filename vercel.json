@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd quickmart-frontend && npm install && npm run build",
-  "outputDirectory": "quickmart-frontend/.next",
-  "framework": "nextjs"
-}
