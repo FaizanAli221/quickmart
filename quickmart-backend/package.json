@@ -1,0 +1,15 @@
+{
+  "name": "quickmart-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight Express API for a grocery delivery app, deployed as Vercel Serverless Functions.",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
