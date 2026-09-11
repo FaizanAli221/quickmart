@@ -1,7 +1,7 @@
 import type { Product } from "@/types";
 import { PRODUCTS as FALLBACK_PRODUCTS } from "@/data/products";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 export interface CustomerDetails {
   name: string;
@@ -34,7 +34,8 @@ export interface OrderResponse {
 
 export async function checkBackendStatus(): Promise<{ online: boolean; message?: string }> {
   try {
-    const res = await fetch(`${API_BASE_URL}/`, { method: "GET", cache: "no-store" });
+    const healthUrl = API_BASE_URL ? `${API_BASE_URL}/` : "/api";
+    const res = await fetch(healthUrl, { method: "GET", cache: "no-store" });
     if (res.ok) {
       const data = await res.json();
       return { online: true, message: data.message };

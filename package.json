@@ -1,0 +1,9 @@
+{
+  "name": "quickmart",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix quickmart-frontend run dev",
+    "build": "npm --prefix quickmart-frontend run build",
+    "start": "npm --prefix quickmart-frontend run start"
+  }
+}
