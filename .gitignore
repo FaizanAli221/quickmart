@@ -1,18 +1,18 @@
 # Dependencies
 node_modules/
-/.pnp
+.pnp
 .pnp.js
 
 # Testing
-/coverage
+coverage/
 
 # Next.js build output
-/.next/
-/out/
+.next/
+out/
 
 # Production build output
-/build
-/dist
+build/
+dist/
 
 # Misc
 .DS_Store
@@ -30,9 +30,9 @@ lerna-debug.log*
 .env*.local
 
 # Vercel & IDE
-.vercel
-.idea
-.vscode
+.vercel/
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
