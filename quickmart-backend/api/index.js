@@ -148,7 +148,7 @@ function generateOrderId() {
 // ---------------------------------------------------------------------------
 
 // GET / — health check / sanity route
-app.get("/", (req, res) => {
+app.get(["/", "/api"], (req, res) => {
   res.status(200).json({
     status: "ok",
     message: "Quickmart API is running",
@@ -157,7 +157,7 @@ app.get("/", (req, res) => {
 });
 
 // GET /api/products — optional ?category= and ?subCategory= filter
-app.get("/api/products", (req, res) => {
+app.get(["/products", "/api/products"], (req, res) => {
   const { category, subCategory } = req.query;
 
   let filtered = PRODUCTS;
@@ -184,7 +184,7 @@ app.get("/api/products", (req, res) => {
 });
 
 // POST /api/orders — create an order
-app.post("/api/orders", (req, res) => {
+app.post(["/orders", "/api/orders"], (req, res) => {
   const { items, customerDetails, paymentMethod } = req.body || {};
 
   if (!Array.isArray(items) || items.length === 0) {
